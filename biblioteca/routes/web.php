@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controladorvista;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('Inicio',[controladorvista::class,'showInicio']) ->name('Ini');
+Route::get('Registro',[controladorvista::class,'ShowRegistro']) ->name('regis');
+
+Route::post('GuardarLibro', [controladorvista::class,'GuardarLibro'])->name('proccess');
 
 Route::get('/', function () {
     return view('welcome');
