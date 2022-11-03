@@ -42,7 +42,9 @@ en los demas archivos que utilizan la plantilla-->
 <div class="alert alert-dark">
 Biblioteca "Winnie Poo" 2022 Copyright® 
 <?php
-
+date_default_timezone_set('America/Mexico_City');    
+$DateAndTime = date('m-d-Y h:i:s a', time());  
+echo "La fecha y hora actual es $DateAndTime.\n";
 ?>
 </div>
 

@@ -2,7 +2,7 @@
 
 @section('main')
 
-@if (session()->has('confirmacion'))
+@if (session()->has('enviado'))
 
     {{!! "<script> Swal.fire(
     'Correcto!',

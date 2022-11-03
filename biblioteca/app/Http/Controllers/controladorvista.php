@@ -9,7 +9,7 @@ class controladorvista extends Controller
 {
     public function GuardarLibro(validador $req){
 
-        return redirect('Registro')->with('confirmacion','Llego correcto');
+        return redirect('Registro')->with('enviado','Llego correcto');
 
     }
 
