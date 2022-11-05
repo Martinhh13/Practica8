@@ -25,7 +25,7 @@
             <a class="nav-link active" aria-current="page" href={{route('Ini')}}>Inicio</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="Registro">Registro de libro</a>
+            <a class="nav-link active" href="Registro">Registro de libro</a>
             </li>
         </ul>
         <form class="d-flex">
@@ -38,7 +38,7 @@
 <!--La siguiente accion ayuda a definir el lugar donde va estar la plantilla
 en los demas archivos que utilizan la plantilla-->
 @yield('main')
-
+<br>
 <div class="alert alert-dark">
 Biblioteca "Winnie Poo" 2022 Copyright® 
 <?php
