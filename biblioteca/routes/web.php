@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorvista;
 
-    
+//Rutas para controlador resource
+
+//Create
+Route::get('consultaLibro/create', [controladorLibros::class,'create']) ->name('consultaLibro.create');    
 /*
 |--------------------------------------------------------------------------
 | Web Routes
