@@ -27,6 +27,9 @@
             <li class="nav-item">
             <a class="nav-link active" href="Registro">Registro de libro</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active" href="formulario">Registro Autores</a>
+            </li>
         </ul>
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

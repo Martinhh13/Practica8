@@ -3,17 +3,17 @@
 @section('main')
 
 @if (session()->has('enviado'))
-
+<?php $titulo= session()->get('title')?>
     {{!! "<script> Swal.fire(
     'Correcto!',
-    'Se guardo el libro',
+    'Se guardo el libro {$titulo}',
     'success'
     ) </script>"!!}}
 
     @endif
 
 
-<div class="card text-dark container mt-5 col-md-6 bg-warning">
+<div class="card text-dark container mt-5 col-md-6 bg-info">
             @if ($errors->any())
                 @foreach ($errors->all() as $error)
 
@@ -31,33 +31,33 @@
             <div class="card-body">
             <form class="m-5" method="post" action="GuardarLibro">
             @csrf
-                <div class="m-5 text-center">
-                    <label>ISBN</label>
+                <div class="m-5 ">
+                    <label>ISBN: </label>
                     <input type="number" class="form-control" name="txtisbn" value="{{old('txtisbn')}}">
                     <p class="text-primary"> {{ $errors->first('txtisbn')}} </p>
                 </div>
-                <div class="m-5 text-center">
-                    <label>Titulo</label>
+                <div class="m-5 ">
+                    <label>Titulo: </label>
                     <input type="text" class="form-control" name="txtTitulo" value="{{old('txtTitulo')}}">
                     <p class="text-primary"> {{ $errors->first('txtTitulo')}} </p>
                 </div>
-                <div class="m-5 text-center">
-                    <label>Autor</label>
+                <div class="m-5 ">
+                    <label>Autor: </label>
                     <input type="text" class="form-control" name="txtautor" value="{{old('txtautor')}}">
                     <p class="text-primary"> {{ $errors->first('txtautor')}} </p>
                 </div>
-                <div class="m-5 text-center">
-                    <label>Paginas</label>
-                    <input type="text" class="form-control" name="txtpaginas" value="{{old('txtpaginas')}}">
+                <div class="m-5 ">
+                    <label>Paginas: </label>
+                    <input type="number" class="form-control" name="txtpaginas" value="{{old('txtpaginas')}}">
                     <p class="text-primary"> {{ $errors->first('txtpaginas')}} </p>
                 </div>
-                <div class="m-5 text-center">
-                    <label>Editorial</label>
+                <div class="m-5 ">
+                    <label>Editorial: </label>
                     <input type="text" class="form-control" name="txtEditorial" value="{{old('txtEditorial')}}">
                     <p class="text-primary"> {{ $errors->first('txtEditorial')}} </p>
                 </div>
-                <div class="m-5 text-center">
-                    <label>Email Editorial</label>
+                <div class="m-5 ">
+                    <label>Email Editorial: </label>
                     <input type="email" class="form-control" name="txtemail" value="{{old('txtemail')}}">
                     <p class="text-primary"> {{ $errors->first('txtemail')}} </p>
                 </div>

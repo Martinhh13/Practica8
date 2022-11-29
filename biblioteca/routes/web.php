@@ -1,8 +1,9 @@
-<?php
+    <?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorvista;
 
+    
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,9 @@ use App\Http\Controllers\controladorvista;
 */
 Route::get('Inicio',[controladorvista::class,'showInicio']) ->name('Ini');
 Route::get('Registro',[controladorvista::class,'ShowRegistro']) ->name('regis');
+Route::get('formulario',[controladorvista::class,'showform'])->name('form');
 
+Route::post('Guardarautor', [controladorvista::class,'Guardarautor'])->name('pro');
 Route::post('GuardarLibro', [controladorvista::class,'GuardarLibro'])->name('proccess');
 
 Route::get('/', function () {
