@@ -36,12 +36,14 @@ class controladorAutores extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorv $request)
     {
         DB::table('tb_autores')->insert([
             "nombre_autor"=> $request->input('txtauto'),
             "fecha_nacimiento"=> $request->input('txtfecha'),
-            "libros_publicados"=> $request->input('txtnum')
+            "libros_publicados"=> $request->input('txtnum'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
 
         ]);
         return redirect('consultaautor/create')->with('enviado','abc');
@@ -55,7 +57,9 @@ class controladorAutores extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaId= DB::table('tb_autores')->where('idautor',$id)->first();
+
+        return view('eliminarautor', compact('consultaId'));
     }
 
     /**
@@ -66,7 +70,9 @@ class controladorAutores extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaId= DB::table('tb_autores')->where('idautor',$id)->first();
+
+        return view('editarautor', compact('consultaId'));
     }
 
     /**
@@ -76,9 +82,16 @@ class controladorAutores extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorv $request, $id)
     {
-        //
+        DB::table('tb_autores')->where('idautor',$id)->update([
+            "nombre_autor"=> $request->input('txtauto'),
+            "fecha_nacimiento"=> $request->input('txtfecha'),
+            "libros_publicados"=> $request->input('txtnum'),
+            "updated_at"=> Carbon::now()
+        ]);
+
+        return redirect('consultaautor')->with('actualizar','abc');
     }
 
     /**
@@ -89,6 +102,8 @@ class controladorAutores extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('tb_autores')->where('idautor',$id)->delete();
+
+        return redirect('consultaautor')->with('elimina','abc');
     }
 }

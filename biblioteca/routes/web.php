@@ -11,12 +11,27 @@ use App\Http\Controllers\controladorAutores;
 Route::get('consultalibro',[controladorLibros::class,'index'])->name('consultalibro.index');
 //Create Libros
 Route::get('consultalibro/create', [controladorLibros::class,'create']) ->name('consultalibro.create');    
-//Index Autores
-Route::get('consultaautor',[controladorAutores::class,'index'])->name('consultaautor.index');
-//Create Autores
-Route::get('consultaautor/create', [controladorAutores::class,'create']) ->name('consultaautor.create');
-//store Autores
-Route::post('consultaautor', [controladorBD::class,'store'])->name('consultaautor.store'); 
+
+/*Create Autor*/
+Route::get('consultaautor/create', [controladorAutores::class,'create'])->name('consultaautor.create');
+
+/*Store Autor*/
+Route::post('consultaautor', [controladorAutores::class,'store'])->name('consultaautor.store');
+
+/*Index Autor*/
+Route::get('consultaautor', [controladorAutores::class,'index'])->name('consultaautor.index');
+
+/*Edit Autor*/
+Route::get('consultaautor/{id}/edit', [controladorAutores::class,'edit'])->name('consultaautor.edit');
+
+/*Update consultaautor*/
+Route::put('consultaautor/{id}', [controladorAutores::class,'update'])->name('consultaautor.update');
+
+/*Show consultaautor*/
+Route::get('consultaautor/{id}/show', [controladorAutores::class,'show'])->name('consultaautor.show');
+
+/*Delete Autor*/
+Route::delete('consultaautor/{id}', [controladorAutores::class,'destroy'])->name('consultaautor.destroy');
 
 /*
 |--------------------------------------------------------------------------

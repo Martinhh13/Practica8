@@ -8,45 +8,41 @@
 'Tu registro de libro se guardo',
 'success'
 ) </script>"!!}}
-
 @endif
+
+@if (session()->has('elimina'))
+        {!!" <script> Swal.fire(
+            'Siuuuuuuuu!',
+            'Autor fusilado',
+            'success'
+          ) </script>"!!}        
+@endif
+
 <h1 class="display-1 mt-4 mb-4 text-center"> Autores </h1>
     <div class="container col-md-6 mb-5"> 
         
-    @foreach ($ConsultaLib as $consulta)
-        <form action="{{route('consultaautor.store')}}">
-            <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">Id</th>
-                <th scope="col">ISBN</th>
-                <th scope="col">Titulo</th>
-                <th scope="col">Autor</th>
-                <th scope="col">Paginas</th>
-                <th scope="col">Editorial</th>
-                <th scope="col">Email</th>
-                <th scope="col">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>{{$consulta->idautor}}</td>
-                <td>{{$consulta->nombre_autor}}</td>
-                <td>{{$consulta->fecha_nacimiento}}</td>
-                <td>{{$consulta->libros_publicados}}</td>
-                <td>{{$consulta->titulo}}</td>
-                <td>{{$consulta->titulo}}</td>
-                <td>{{$consulta->titulo}}</td>
-                </tr>
-            </tbody>
-            </table>
-            </form>
-            <br>        
-        </div>
+  @foreach ($ConsultaAut as $consulta)
+    <div class="container col-md-6 mt-5 mb-5">
+        <div class="card text-center">
+            <div class="card-header">
+            </div>
 
-     @endforeach
+            <div class="card-body">
+              <p class="card-text">{{$consulta->nombre_autor}}</p>
+              <p class="card-text">{{$consulta->fecha_nacimiento}}</p>
+              <p class="card-text">{{$consulta->libros_publicados}}</p>
+
+            </div>
+
+            <div class="card-footer text-muted">
+                <a href="{{route('consultaautor.show',$consulta->idautor)}}" class="btn btn-danger">Eliminar</a>
+                <a href="{{route('consultaautor.edit',$consulta->idautor)}}" class="btn btn-primary">Actualizar</a>
+            </div>
+          </div>
+
+          @endforeach
+
     </div>
-
+  </div>
 
 @stop
