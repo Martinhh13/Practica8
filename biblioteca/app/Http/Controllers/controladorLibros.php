@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validador;
+use DB;
+use Carbon\Carbon;
 
 class controladorLibros extends Controller
 {
@@ -13,7 +16,8 @@ class controladorLibros extends Controller
      */
     public function index()
     {
-        //
+        $ConsultaLib= DB::table('tb_libros')->get();
+        return view('consultalibro',compact('ConsultaLib'));
     }
 
     /**

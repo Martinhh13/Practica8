@@ -2,11 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorvista;
+use App\Http\Controllers\controladorLibros;
+use App\Http\Controllers\controladorAutores;
 
 //Rutas para controlador resource
 
-//Create
-Route::get('consultaLibro/create', [controladorLibros::class,'create']) ->name('consultaLibro.create');    
+//Index Libros
+Route::get('consultalibro',[controladorLibros::class,'index'])->name('consultalibro.index');
+//Create Libros
+Route::get('consultalibro/create', [controladorLibros::class,'create']) ->name('consultalibro.create');    
+//Index Autores
+Route::get('consultaautor',[controladorAutores::class,'index'])->name('consultaautor.index');
+//Create Autores
+Route::get('consultaautor/create', [controladorAutores::class,'create']) ->name('consultaautor.create');
+//store Autores
+Route::post('consultaautor', [controladorBD::class,'store'])->name('consultaautor.store'); 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

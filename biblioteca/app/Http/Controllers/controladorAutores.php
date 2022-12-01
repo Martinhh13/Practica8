@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validadorv;
+use DB;
+use Carbon\Carbon;
 
 class controladorAutores extends Controller
 {
@@ -13,7 +16,8 @@ class controladorAutores extends Controller
      */
     public function index()
     {
-        //
+        $ConsultaAut=DB::table('tb_autores')->get();
+        return view('consultaautor',compact('ConsultaAut'));
     }
 
     /**
@@ -23,7 +27,7 @@ class controladorAutores extends Controller
      */
     public function create()
     {
-        //
+        return view('consultaautor');
     }
 
     /**
@@ -34,7 +38,13 @@ class controladorAutores extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('tb_autores')->insert([
+            "nombre_autor"=> $request->input('txtauto'),
+            "fecha_nacimiento"=> $request->input('txtfecha'),
+            "libros_publicados"=> $request->input('txtnum')
+
+        ]);
+        return redirect('consultaautor/create')->with('enviado','abc');
     }
 
     /**

@@ -19,7 +19,7 @@
                 Registre el libro
             </div>
             <div class="card-body">
-            <form class="m-5" method="post" action="Guardarautor">
+            <form class="m-5" method="post" action="{{route('consultaautor.store')}}">
                 @csrf
                 <div>
                 <Label>Nombre completo del autor: </label>

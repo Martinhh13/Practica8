@@ -2,88 +2,40 @@
 
 @section('main')
 
-<h1 class="display-1 mt-4 mb-4 text-center"> Libros </h1>
+<h1 class="display-1 mt-4 mb-4 text-center"> Libro </h1>
     <div class="container col-md-6 mb-5"> 
         
-        @foreach ($ConsultaRec as $consulta)
-
+    @foreach ($ConsultaLib as $consulta)
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Id</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Paginas</th>
+                <th scope="col">Editorial</th>
+                <th scope="col">Email</th>
+                <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <td>{{$consulta->Id}}</td>
+                <td>{{$consulta->ISBN}}</td>
+                <td>{{$consulta->Titulo}}</td>
+                <td>{{$consulta->Autor}}</td>
+                <td>{{$consulta->Paginas}}</td>
+                <td>{{$consulta->Editorial}}</td>
+                <td>{{$consulta->Emailed}}</td>
                 </tr>
             </tbody>
             </table>
-            Variants
-            Use contextual classes to color tables, table rows or individual cells.
-
-            Class	Heading	Heading
-            Default	Cell	Cell
-            Primary	Cell	Cell
-            Secondary	Cell	Cell
-            Success	Cell	Cell
-            Danger	Cell	Cell
-            Warning	Cell	Cell
-            Info	Cell	Cell
-            Light	Cell	Cell
-            Dark	Cell	CellCopy
-            <!-- On tables -->
-            <table class="table-primary">...</table>
-            <table class="table-secondary">...</table>
-            <table class="table-success">...</table>
-            <table class="table-danger">...</table>
-            <table class="table-warning">...</table>
-            <table class="table-info">...</table>
-            <table class="table-light">...</table>
-            <table class="table-dark">...</table>
-
-            <!-- On rows -->
-            <tr class="table-primary">...</tr>
-            <tr class="table-secondary">...</tr>
-            <tr class="table-success">...</tr>
-            <tr class="table-danger">...</tr>
-            <tr class="table-warning">...</tr>
-            <tr class="table-info">...</tr>
-            <tr class="table-light">...</tr>
-            <tr class="table-dark">...</tr>
-
-            <!-- On cells (`td` or `th`) -->
-            <tr>
-            <td class="table-primary">...</td>
-            <td class="table-secondary">...</td>
-            <td class="table-success">...</td>
-            <td class="table-danger">...</td>
-            <td class="table-warning">...</td>
-            <td class="table-info">...</td>
-            <td class="table-light">...</td>
-            <td class="table-dark">...</td>
-            </tr>
             <br>        
         </div>
 
-        @endforeach
+     @endforeach
     </div>
 
 @stop
