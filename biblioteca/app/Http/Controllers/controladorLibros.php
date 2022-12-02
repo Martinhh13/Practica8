@@ -74,7 +74,7 @@ class controladorLibros extends Controller
     public function edit($id)
     {
         $consultaId= DB::table('tb_libros')->where('Id',$id)->first();
-        $categorias = tb_autores::all();
+        $categorias=DB::table('tb_autores')->get();
         return view('editarlibro', compact('consultaId'),compact('categorias'));
     }
 
@@ -110,6 +110,6 @@ class controladorLibros extends Controller
     {
         DB::table('tb_libros')->where('Id',$id)->delete();
 
-        return redirect('libro')->with('elimina','abc');
+        return redirect('consultalibro')->with('elimina','abc');
     }
 }

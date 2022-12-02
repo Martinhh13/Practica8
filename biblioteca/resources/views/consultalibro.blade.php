@@ -21,8 +21,8 @@
             </div>
 
             <div class="card-footer text-muted">
-                <a href="{{route('consultalibro.show',$consulta->idLibros)}}" class="btn btn-danger">Eliminar</a>
-                <a href="{{route('consultalibro.edit',$consulta->idLibros)}}" class="btn btn-primary">Actualizar</a>
+                <a href="{{route('consultalibro.show',$consulta->Id)}}" class="btn btn-danger">Eliminar</a>
+                <a href="{{route('consultalibro.edit',$consulta->Id)}}" class="btn btn-primary">Actualizar</a>
             </div>
           </div>
     </div>

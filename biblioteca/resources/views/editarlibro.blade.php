@@ -44,8 +44,8 @@
                         <select class="form-select" name="txtAutor" aria-label="Default select example">
                             <option selected> Selecciona un autor...</option>
 
-                            @foreach ($categorias as $tb_autores)
-                                <option value="{{$tb_autores['idautor']}}">{{$tb_autores['nombre_autor']}}</option>
+                            @foreach ($categorias as $consulta)
+                            <option value="{{$consulta->idautor}}">{{$consulta->nombre_autor}}</option>
                             @endforeach
                         
                         </select>

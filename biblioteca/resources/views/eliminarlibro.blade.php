@@ -4,7 +4,7 @@
 
 <h1 class="display-1 mt mt-4 mb-4 text-center"> Eliminar </h1>
 
-<form class="m-4" method="POST" action="{{route('libro.update',$consultaId->idLibros)}}">          
+<form class="m-4" method="POST" action="{{route('consultalibro.update',$consultaId->Id)}}">          
     <div class="container col-md-6 mt-5 mb-5">
         <div class="card text-center">
             <div class="card-header">
@@ -20,7 +20,7 @@
             </div>
 </form>
             <div class="card-footer text-muted">
-              <form method="POST" action="{{route('libro.destroy',$consultaId->idLibros)}}">
+              <form method="POST" action="{{route('consultalibro.destroy',$consultaId->Id)}}">
               @csrf
               @method('delete')
                 <button type="submit"> Si, Eliminalo </button>
