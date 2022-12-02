@@ -9,26 +9,24 @@
     <div class="container col-md-6 mt-5 mb-5">
         <div class="card text-center">
             <div class="card-header">
-              <h5 class="text-primary text center">{{$consulta->titulo}}</h5>
+              <h5 class="text-primary text center">{{$consulta->Titulo}}</h5>
             </div>
 
             <div class="card-body">
               <p class="card-text">{{$consulta->ISBN}}</p>
-              <p class="card-text">{{$consulta->paginas}}</p>
               <p class="card-text">{{$consulta->autor_id}}</p>
-              <p class="card-text">{{$consulta->editorial}}</p>
-              <p class="card-text">{{$consulta->email}}</p>
+              <p class="card-text">{{$consulta->Paginas}}</p>
+              <p class="card-text">{{$consulta->Editorial}}</p>
+              <p class="card-text">{{$consulta->Emailed}}</p>
             </div>
 
             <div class="card-footer text-muted">
-                <a href="{{route('libro.show',$consulta->idLibros)}}" class="btn btn-danger">Si no lo veo no existe</a>
-                <a href="{{route('libro.edit',$consulta->idLibros)}}" class="btn btn-primary">Cambia la info we</a>
+                <a href="{{route('consultalibro.show',$consulta->idLibros)}}" class="btn btn-danger">Eliminar</a>
+                <a href="{{route('consultalibro.edit',$consulta->idLibros)}}" class="btn btn-primary">Actualizar</a>
             </div>
           </div>
-
-          @endforeach
-
     </div>
+    @endforeach
   </div>
 
 @stop

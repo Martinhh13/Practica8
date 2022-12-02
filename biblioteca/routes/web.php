@@ -9,8 +9,24 @@ use App\Http\Controllers\controladorAutores;
 
 //Index Libros
 Route::get('consultalibro',[controladorLibros::class,'index'])->name('consultalibro.index');
+
 //Create Libros
-Route::get('consultalibro/create', [controladorLibros::class,'create']) ->name('consultalibro.create');    
+Route::get('consultalibro/create', [controladorLibros::class,'create']) ->name('consultalibro.create'); 
+
+/*Store Libro*/
+Route::post('consultalibro', [controladorLibros::class,'store'])->name('consultalibro.store');
+
+/*Edit Libro*/
+Route::get('consultalibro/{id}/edit', [controladorLibros::class,'edit'])->name('consultalibro.edit');
+
+/*Update Libro*/
+Route::put('consultalibro/{id}', [controladorLibros::class,'update'])->name('consultalibro.update');
+
+/*Show Libro*/
+Route::get('consultalibro/{id}/show', [controladorLibros::class,'show'])->name('consultalibro.show');
+
+/*Delete Libro*/
+Route::delete('consultalibro/{id}', [controladorLibros::class,'destroy'])->name('consultalibro.destroy');
 
 /*Create Autor*/
 Route::get('consultaautor/create', [controladorAutores::class,'create'])->name('consultaautor.create');

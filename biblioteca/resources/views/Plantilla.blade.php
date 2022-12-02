@@ -25,7 +25,7 @@
             <a class="nav-link active" aria-current="page" href={{route('Ini')}}>Inicio</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" href="Registro">Registro de libro</a>
+            <a class="nav-link active" href="{{route('consultalibro.create')}}">Registro de libro</a>
             </li>
             <li class="nav-item">
             <a class="nav-link active" href="formulario">Registro Autores</a>

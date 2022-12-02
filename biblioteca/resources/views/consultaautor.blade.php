@@ -12,8 +12,8 @@
 
 @if (session()->has('elimina'))
         {!!" <script> Swal.fire(
-            'Siuuuuuuuu!',
-            'Autor fusilado',
+            'Completado!',
+            'Autor Eliminado',
             'success'
           ) </script>"!!}        
 @endif
@@ -39,10 +39,9 @@
                 <a href="{{route('consultaautor.edit',$consulta->idautor)}}" class="btn btn-primary">Actualizar</a>
             </div>
           </div>
-
-          @endforeach
-
     </div>
+    @endforeach
+
   </div>
 
 @stop

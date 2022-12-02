@@ -46,7 +46,7 @@ class controladorAutores extends Controller
             "updated_at"=> Carbon::now()
 
         ]);
-        return redirect('consultaautor/create')->with('enviado','abc');
+        return redirect('consultaautor')->with('enviado','abc');
     }
 
     /**
